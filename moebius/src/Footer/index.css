@@ -1,0 +1,22 @@
+#footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    height: 50px;
+    background-color: rgb(19, 6, 27);
+}
+#footer h3 {
+    margin-right: 30px;
+    font-size: 10px;
+    font-weight: 200;
+}
+
+#footer h3 span {
+    font-size: 12px;
+    font-family: 'Sanchez', serif;
+    color: #ffffb5;
+}

@@ -1,0 +1,7 @@
+#categories-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100vh;
+    padding-inline-start: 20px;
+}
