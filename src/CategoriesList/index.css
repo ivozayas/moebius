@@ -1,0 +1,7 @@
+#categories-ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-gap: 5px;
+    width: calc(100% - 50px);
+    padding-inline-start: 20px;
+}

@@ -1,0 +1,18 @@
+#search-section {
+    margin-top: 105px;
+    margin-bottom: 110px;
+    min-width: calc(100vw - 130px);
+}
+
+#search-section h2 {
+    font-family: 'Sanchez', serif;
+    color: #ffffb5;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    margin-left: 40px;
+}
+
+#search-section h2 span {
+    color: #ffffff;
+}

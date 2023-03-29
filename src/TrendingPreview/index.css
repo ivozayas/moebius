@@ -1,0 +1,9 @@
+.section {
+    width: calc(100vw - 130px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}

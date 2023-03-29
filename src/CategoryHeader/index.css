@@ -1,0 +1,14 @@
+#category-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#category-header h2 {
+    font-family: 'Sanchez', serif;
+    color: #ffffb5;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+    margin-left: 40px;
+}

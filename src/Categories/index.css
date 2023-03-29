@@ -1,0 +1,23 @@
+#category-lists-list {
+    width: calc(100vw - 170px);
+    margin-top: 105px;
+    margin-bottom: 110px;
+}
+
+#category-lists-list li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#category-lists-list li header h2 {
+    margin-top: -5px;
+}
+
+#category-lists-list li header a button {
+    margin-bottom: 21px;
+}

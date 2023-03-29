@@ -1,0 +1,15 @@
+#home-button {
+    background: none;
+    border: none;
+    transition: transform .2s ease-in-out, color .2s ease-in-out;
+    color: rgb(81, 20, 82);
+    position: fixed;
+    left: 38px;
+    top: 0xp;
+    z-index: 1;
+}
+
+#home-button:hover {
+    transform: scale(1.15);
+    color: rgb(92, 23, 95);
+}

@@ -1,0 +1,38 @@
+.movie-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 8px;
+    transition: transform 0.2s ease-in-out, margin 0.2s ease-in-out;
+    color: white;
+}
+
+.movie-container div {
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 175px;
+    height: 260px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px 1px #070b14;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.movie-title {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 200;
+}
+
+.movie-container div:hover {
+    box-shadow: 0px 0px 10px rgb(255, 255, 160);
+}
+
+
+.movie-container:hover {
+    color: #ffffb5;
+    transform: scale(1.05);
+    margin: 0px 18px;
+}

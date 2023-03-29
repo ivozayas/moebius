@@ -1,0 +1,19 @@
+#category-title {
+    text-decoration: none;
+    color: white;
+    transition: transform 0.5s ease;
+    height: 30px;
+}
+
+#category-title h3 {
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, padding-left 0.1s ease-in-out;
+}
+
+#category-title h3:hover {
+    transform: scale(1.1);
+    padding-left: 5px;
+    color: #ffffb5;
+}

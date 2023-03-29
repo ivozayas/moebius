@@ -1,0 +1,26 @@
+body {
+    background: linear-gradient(180deg, rgb(24, 8, 32) 20%, rgb(40, 7, 46) 100%);
+    color: rgb(255, 255, 255);
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0px 50px;
+    z-index: -1;
+}
+
+.remove-link-decoration {
+    text-decoration: none;
+}
+
+/* ::-webkit-scrollbar-thumb {
+    background-color: rgb(81, 20, 82);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #271331;;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(94, 20, 96);
+} */
