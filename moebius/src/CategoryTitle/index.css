@@ -1,0 +1,32 @@
+#category-title-li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 150px;
+    margin-bottom: -25px;
+    margin-right: 25px;
+    transition: transform 0.5s ease;
+}
+
+/* #category-title-li div {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+} */
+
+#category-title-li h3 {
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+/* #category-title-li div:hover {
+    box-shadow: 0px 0px 15px rgb(255, 255, 160);
+} */
+
+#category-title-li h3:hover {
+    transform: scale(1.1);
+    color: #ffffb5;
+}
