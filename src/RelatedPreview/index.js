@@ -3,15 +3,16 @@ import { MovieContainer } from "../MovieContainer"
 import './index.css'
 
 function RelatedPreview({ movies }) {
+    console.log(movies);
     return (
         <ul id="container-movie-ul-vertical">
             {movies ? (
                 movies.map(movie => {
                     return (
                         <MovieContainer
-                            key = {movie.original_title}
+                            key = {movie.title}
                             source = {movie.poster_path}
-                            title = {movie.original_title}
+                            title = {movie.title}
                             movieID = {movie.id}
                         />
                     )

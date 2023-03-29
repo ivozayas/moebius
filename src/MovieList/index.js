@@ -9,7 +9,7 @@ function MovieList({ movies }) {
                     movies.map(movie => {
                         return (
                             <MovieContainer
-                                key = {movie.original_title}
+                                key = {movie.title}
                                 source = {movie.poster_path}
                                 title = {movie.title}
                                 movieID = {movie.id}

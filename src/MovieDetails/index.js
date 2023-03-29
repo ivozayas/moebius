@@ -30,21 +30,25 @@ function MovieDetails(){
                     <div id="movie-data">
                         
                         <div id="title-punctuation">
-                            <h2 id="movie-title">{selectedMovie.title}</h2>
-                        {selectedMovie.vote_average && (
-                            <div id="movie-punctuation">
-                                <i className="fa-solid fa-star"></i>
-                                <p>{selectedMovie.vote_average.toFixed(1)}</p>
+                            <div>
+                                <h2 id="movie-title">{selectedMovie.title}</h2>
+                                {(selectedMovie.original_title !== selectedMovie.title) && (
+                                    <h3 id="original-title">{selectedMovie.original_title}</h3>
+                                )}
                             </div>
-                        )}
-
+                            {(selectedMovie.vote_average > 0) && (
+                                <div id="movie-punctuation">
+                                    <i className="fa-solid fa-star"></i>
+                                    <p>{selectedMovie.vote_average.toFixed(1)}</p>
+                                </div>
+                            )}
                         </div>
 
                         <p>{selectedMovie.overview}</p>
                         
                         <div id="year-duration">
-                        {selectedMovie.runtime && <p><span>Duration:</span> {selectedMovie.runtime} min</p>}
-                             <p><span>Year:</span> {selectedMovie.release_date}</p>
+                            {(selectedMovie.runtime > 0) && <p><span>Duration:</span> {selectedMovie.runtime} min</p>}
+                            {selectedMovie.release_date && <p><span>Year:</span> {selectedMovie.release_date}</p>}
                         </div>
 
                         <div id="movie-categories">
