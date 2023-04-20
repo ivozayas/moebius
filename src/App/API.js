@@ -18,6 +18,7 @@ function useAPI() {
     const [ searchResults, setSearchResults ] = useState([])
     const [ relatedMovies, setRelatedMovies ] = useState([])
     const [ selectedMovie, setSelectedMovie ] = useState({})
+    const [ showPoster, setShowPoster ] = useState(false)
     const [ searchValue, setSearchValue] = useState('')
     const { search, movieID } = useParams()
  
@@ -54,13 +55,15 @@ function useAPI() {
     }, [])
 
     useEffect(() => {
-        async function getSearchedMovie() {
-            const { data } = await api('search/movie?query=' + search)
-            setSearchResults(data.results)
-            setSearchValue(search)
+        if(search){
+            async function getSearchedMovie() {
+                const { data } = await api('search/movie?query=' + search)
+                setSearchResults(data.results)
+                setSearchValue(search)
+            }
+    
+            getSearchedMovie()
         }
-
-        getSearchedMovie()
     }, [search])
 
     useEffect(() => {
@@ -80,6 +83,10 @@ function useAPI() {
         }
     }, [movieID])
 
+    useEffect(() => {
+        console.log(showPoster)
+      }, [showPoster])
+
     return {
         trendMovies,
         categories,
@@ -87,7 +94,9 @@ function useAPI() {
         setSearchValue,
         searchResults,
         selectedMovie,
-        relatedMovies
+        relatedMovies,
+        setShowPoster,
+        showPoster
     }
 }
 

@@ -10,7 +10,7 @@ function PreviewList({ movies }) {
                         return (
                 
                                 <MovieContainer
-                                    key = {movie.title}
+                                    key = {movie.id}
                                     source = {movie.poster_path}
                                     title = {movie.title}
                                     movieID = {movie.id}

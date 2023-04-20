@@ -5,26 +5,29 @@ import { BackButton } from "../BackButton"
 import { RelatedPreview } from '../RelatedPreview'
 import { PreviewList } from '../PreviewList'
 import { CategoriesList } from "../CategoriesList"
-
+import { Modal } from "../Modal"
+import { ModalPoster } from "../ModalPoster"
+import { CloseModal } from "../CloseModal"
 
 function MovieDetails(){
-    const { selectedMovie, relatedMovies } = useAPI()
+    const { selectedMovie, relatedMovies, setShowPoster, showPoster } = useAPI()
 
     return (    
         <section>
-            <BackButton/>
+                            {!showPoster && <BackButton/>}
 
-            {selectedMovie && (
+            {selectedMovie ? (
                 <section id="movie-details-section">
-                <BackButton/>
     
                 <div id="movie-data-container">
                     
                     <div 
                         id='movie-poster'
+                        title="show larger image"
                         style={selectedMovie.poster_path ?
                             ({ backgroundImage: `url('https://image.tmdb.org/t/p/w300/${selectedMovie.poster_path}')` }) : 
                             ({background: 'linear-gradient(0deg, rgba(56,15,57,1) 25%, rgba(81,20,82,1) 100%)'})}
+                        onClick={() => { if(selectedMovie.poster_path){setShowPoster(true)}}}
                     ></div>
 
                     <div id="movie-data">
@@ -44,17 +47,19 @@ function MovieDetails(){
                             )}
                         </div>
 
-                        <p>{selectedMovie.overview}</p>
+                        {selectedMovie.overview && <p id="overview"><span>Overview</span><br/>{selectedMovie.overview}</p>}
                         
                         <div id="year-duration">
                             {(selectedMovie.runtime > 0) && <p><span>Duration:</span> {selectedMovie.runtime} min</p>}
                             {selectedMovie.release_date && <p><span>Year:</span> {selectedMovie.release_date}</p>}
                         </div>
 
-                        <div id="movie-categories">
-                            <h2>categories</h2>
-                            <CategoriesList categories={selectedMovie.genres}/>
-                        </div>
+                        {(!!selectedMovie["genres"] && selectedMovie["genres"].length > 0) && 
+                            <div id="movie-categories">
+                                <h2>categories</h2>
+                                <CategoriesList categories={selectedMovie.genres}/>
+                            </div>
+                        }
 
                     </div>
                 </div>
@@ -69,8 +74,24 @@ function MovieDetails(){
                     <PreviewList movies = {relatedMovies}/>
                 </div>
     
+                {(!!showPoster && !!selectedMovie.poster_path) &&
+                    <Modal>
+                        <CloseModal setShowPoster={setShowPoster}/>
+                        <ModalPoster
+                            source={`https://image.tmdb.org/t/p/w300/${selectedMovie.poster_path}`}
+                            title={selectedMovie.title}
+                        />
+                    </Modal>
+                }          
+
             </section>
+            ) : (
+                <section id="movie-not-found">
+                    <BackButton/>
+                    <h2>the requested movie was not found</h2>
+                </section>
             )}
+
         </section>
     )
 }

@@ -19,7 +19,7 @@ function Header() {
     return (
         <header id="header">
             
-            <Link to='/' id="logo-link"><h1 id="logo">m</h1></Link>
+            <Link to='/' id="logo-link"><h1 id="logo" title="home">m</h1></Link>
 
             <form
                 id="header-search-form"

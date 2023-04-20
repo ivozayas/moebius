@@ -1,0 +1,9 @@
+#poster-modal {
+    position: fixed;
+    top: 63px;
+    bottom: 50px;
+}
+
+#poster-modal img {
+    min-height: 100%;
+}

@@ -31,20 +31,26 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: box-shadow .2s ease-in-out, filter .2s ease-in-out;
+    transition: box-shadow .3s ease-in-out, filter .4s ease-in-out;
 }
 
 #movie-poster:hover{
-    filter: saturate(115%);
+    filter: saturate(120%);
     box-shadow: 1px 1px 10px 3px #070b14;
+    cursor: pointer;
 }
 
 #movie-data{
     width: calc(100% - 262);
 }
 
-#movie-data p{
+#overview{
     max-width: 600px;
+}
+
+#overview span {
+    color: #ffffb5;
+    margin-right: 8px;
 }
 
 #year-duration {
@@ -81,6 +87,7 @@
     font-size: 20px;
     font-weight: 400;
     margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 #movie-punctuation {
@@ -152,6 +159,23 @@
     font-size: 23px;
     font-weight: 400;
     margin-bottom: 0px;
+}
+
+/**/
+#movie-not-found {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 8px;
+}
+
+#movie-not-found h2 {
+    font-family: 'Sanchez', serif;
+    color: #ffffb5;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    margin-left: 40px;
 }
 
 /**/
