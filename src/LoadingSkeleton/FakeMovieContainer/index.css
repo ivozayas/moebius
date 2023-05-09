@@ -1,0 +1,23 @@
+#fake-movie-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 8px;
+}
+
+#fake-movie-poster {
+    background: linear-gradient(10deg, rgba(56,15,57,1) 25%, rgba(81,20,82,1) 100%);
+    width: 175px;
+    height: 260px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#fake-movie-title {
+    background: linear-gradient(20deg, rgba(56,15,57,1) 25%, rgb(76, 20, 77) 100%);
+    height: 10px;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 2px;
+}

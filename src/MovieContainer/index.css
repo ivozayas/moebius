@@ -31,7 +31,6 @@
     filter: saturate(115%);
 }
 
-
 .movie-container:hover {
     color: #ffffb5;
     transform: scale(1.05);

@@ -19,13 +19,12 @@ function useAPI() {
     const [ relatedMovies, setRelatedMovies ] = useState([])
     const [ selectedMovie, setSelectedMovie ] = useState({})
     const [ showPoster, setShowPoster ] = useState(false)
+    const [ loading, setLoading ] = useState(true)
     const [ searchValue, setSearchValue] = useState('')
     const { search, movieID } = useParams()
  
     useEffect(() => {  
-
         async function fetchData() {
-
             const [trendingMoviesResponse, categoriesResponse] =
                 await Promise.all([
                     api('trending/movie/week'),
@@ -47,6 +46,7 @@ function useAPI() {
                 })
             )
             
+            setLoading(false)
             setTrendMovies(trendingMoviesResponse.data.results)
             setCategories(categoriesWithMovies)
         }
@@ -58,8 +58,10 @@ function useAPI() {
         if(search){
             async function getSearchedMovie() {
                 const { data } = await api('search/movie?query=' + search)
+                
                 setSearchResults(data.results)
                 setSearchValue(search)
+                setLoading(false)
             }
     
             getSearchedMovie()
@@ -70,11 +72,13 @@ function useAPI() {
         if (movieID) {
             async function getMovieByID() {
                 const { data } = await api('movie/' + movieID)
+                setLoading(false)
                 setSelectedMovie(data)
             }
 
             async function getRelatedMovies() {
                 const { data } = await api('movie/' + movieID + '/similar')
+                setLoading(false)
                 setRelatedMovies(data.results)
             }
 
@@ -82,10 +86,6 @@ function useAPI() {
             getRelatedMovies()
         }
     }, [movieID])
-
-    useEffect(() => {
-        console.log(showPoster)
-      }, [showPoster])
 
     return {
         trendMovies,
@@ -96,7 +96,8 @@ function useAPI() {
         selectedMovie,
         relatedMovies,
         setShowPoster,
-        showPoster
+        showPoster,
+        loading
     }
 }
 

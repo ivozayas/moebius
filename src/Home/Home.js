@@ -7,7 +7,7 @@ import { CategoriesPreview } from '../CategoriesPreview'
 import { CategoriesList } from '../CategoriesList'
 
 function Home(){
-    const { trendMovies, categories } = useAPI()
+    const { trendMovies, categories, loading } = useAPI()
 
     return (
         <React.Fragment>
@@ -33,6 +33,7 @@ function Home(){
 
                 <CategoriesList
                     categories = {categories}
+                    loading = {loading}
                 />
 
             </CategoriesPreview>

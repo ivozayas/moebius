@@ -10,7 +10,7 @@ function PreviewHeader({ sectionTitle, sectionRout }){
                 <Link to={sectionRout}>
                     <button>more</button>
                 </Link>
-}
+            }
         </header>
     )
 }

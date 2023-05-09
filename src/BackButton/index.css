@@ -12,4 +12,5 @@
 #back-button:hover {
     transform: scale(1.15);
     color: rgb(92, 23, 95);
+    cursor: pointer;
 }

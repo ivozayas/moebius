@@ -6,7 +6,7 @@
     padding: 0;
     height: 400px;
     margin-bottom: 0px;
-    margin-top: -40px;
+    margin-top: -50px;
     list-style: none;
     overflow-x: scroll;
     scroll-behavior: smooth;
@@ -34,7 +34,7 @@
     background-color:rgb(92, 23, 95);
 }
 
-#fake-container {
+#ghost-container {
     width: 200px;
     height: 300px;
 }

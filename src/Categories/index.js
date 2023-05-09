@@ -14,7 +14,7 @@ function Categories() {
 
             {categories.map(category => {
                 return (
-                    <li key={category.name}>
+                    <li id="category-list" key={category.name}>
                         <PreviewHeader 
                             sectionTitle={category.name.toLowerCase()}
                             sectionRout={`/category=${category.id}-${category.name}`}
