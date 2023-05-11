@@ -46,9 +46,9 @@ function useAPI() {
                 })
             )
             
-            setLoading(false)
             setTrendMovies(trendingMoviesResponse.data.results)
             setCategories(categoriesWithMovies)
+            setLoading(false)
         }
 
         fetchData()
@@ -72,14 +72,14 @@ function useAPI() {
         if (movieID) {
             async function getMovieByID() {
                 const { data } = await api('movie/' + movieID)
-                setLoading(false)
                 setSelectedMovie(data)
+                setLoading(false)
             }
 
             async function getRelatedMovies() {
                 const { data } = await api('movie/' + movieID + '/similar')
-                setLoading(false)
                 setRelatedMovies(data.results)
+                setLoading(false)
             }
 
             getMovieByID()

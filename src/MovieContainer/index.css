@@ -6,6 +6,8 @@
     margin: 0px 8px;
     transition: transform 0.2s ease-in-out, margin 0.2s ease-in-out;
     color: white;
+    min-width: 175px;
+    min-height: 260px;
 }
 
 .movie-container div {
@@ -34,5 +36,8 @@
 .movie-container:hover {
     color: #ffffb5;
     transform: scale(1.05);
-    margin: 0px 18px;
+}
+
+.fade {
+    transition: opacity 0.8s ease-in-out;
 }

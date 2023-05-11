@@ -274,6 +274,9 @@
     #fake-overview {
         width: 500px;
     }
+    #fake-detailed-movie-title {
+        margin-top: 30px;
+    }
 }
 
 @media (max-width: 600px) {

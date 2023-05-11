@@ -14,6 +14,10 @@
     padding: 5px;
 }
 
+#container-movie-ul li:hover {
+    margin: 0px 18px;
+}
+
 ::-webkit-scrollbar {
     height: 7px;              
 }

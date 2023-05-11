@@ -18,6 +18,17 @@
     margin-right: 15px;
 }
 
+#container-movie-ul-vertical li {
+    margin-bottom: 40px;
+    margin-right: 15px;
+}
+
+#container-movie-ul-vertical li:hover {
+    margin-top: 5px;
+    margin-bottom: 45px;
+    margin-right: 20px;
+}
+
 #container-movie-ul-vertical::-webkit-scrollbar {
     width: 7px;              
 }
