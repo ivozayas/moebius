@@ -4,7 +4,8 @@ import { BackButton } from "../BackButton"
 import { MovieList } from "../MovieList"
 import './index.css'
  
-function Category({ categoryName, movies }) {
+function Category({ categoryName, categoryID, movies }) {
+
     return (
             <section id="category-section">
                 
@@ -12,7 +13,7 @@ function Category({ categoryName, movies }) {
 
                 <CategoryHeader categoryName = {categoryName}/>
 
-                <MovieList movies = { movies }/>
+                <MovieList movies = { movies } route={{name: "category", id: categoryID}}/>
 
             </section>
     )

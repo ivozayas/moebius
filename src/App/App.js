@@ -41,6 +41,7 @@ function App() {
                 path={`/category=${category.id}-${category.name}`}
                 element={<Category 
                     categoryName={category.name}
+                    categoryID={category.id}
                     movies={category?.movies}
                   />}
               />

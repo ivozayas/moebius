@@ -19,17 +19,14 @@ function Search() {
                 </div>
             )}
              
-            {(!loading && searchResults.length > 0) &&
+            {(!loading && searchResults.length > 0) ? 
                 <div>
                     <BackButton/>
 
                     <SearchHeader searchValue={searchValue}/>
 
-                    <MovieList movies={searchResults}/>
-                </div>
-            }
-                  
-            {(!loading && searchResults.length === 0) && 
+                    <MovieList movies={searchResults} route={{name: "search"}}/>
+                </div> :
                 <div>
                     <BackButton/>
                     <h2>there are no results for <span>{ searchValue }</span></h2>

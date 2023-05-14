@@ -21,6 +21,8 @@ function useAPI() {
     const [ showPoster, setShowPoster ] = useState(false)
     const [ loading, setLoading ] = useState(true)
     const [ searchValue, setSearchValue] = useState('')
+    const [moreMovies, setMoreMovies] = useState([])
+
     const { search, movieID } = useParams()
  
     useEffect(() => {  
@@ -87,6 +89,41 @@ function useAPI() {
         }
     }, [movieID])
 
+    async function getPaginatedMovies(route) {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement
+
+        const scrollIsBottom = (scrollTop + clientHeight) >= (scrollHeight - 15)
+        
+        const page = moreMovies.length/20 + 2
+
+        if (scrollIsBottom){
+            if (route?.name === "trends") {
+                const { data } = await api('trending/movie/week', {
+                    params: {
+                        page,
+                    },
+                })
+
+                setMoreMovies([...moreMovies, ...data.results])
+            } else if (route?.name === "search") {
+                const { data } = await api('search/movie?query=' + search, {
+                    params: {
+                        page,
+                    },
+                })
+
+                setMoreMovies([...moreMovies, ...data.results])
+            } else if (route?.name === "category") {
+                const { data } = await api('discover/movie?with_genres=' + route.id, {
+                    params: {
+                        page,
+                    },
+                })
+                setMoreMovies([...moreMovies, ...data.results])
+            } 
+        }       
+    }
+
     return {
         trendMovies,
         categories,
@@ -97,7 +134,9 @@ function useAPI() {
         relatedMovies,
         setShowPoster,
         showPoster,
-        loading
+        loading,
+        getPaginatedMovies,
+        moreMovies
     }
 }
 

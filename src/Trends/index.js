@@ -7,13 +7,14 @@ import { MovieList } from '../MovieList'
 
 function Trends() {
     const { trendMovies } = useAPI()
+
     return (
         <section id="trends-section">
             <BackButton/>
 
             <CategoryHeader categoryName='Trends'/>
 
-            <MovieList movies={trendMovies} />
+            <MovieList movies={trendMovies} route={{name: "trends"}}/>
         </section>
     )
 }

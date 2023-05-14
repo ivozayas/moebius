@@ -4,13 +4,13 @@ import { useInView } from "react-intersection-observer"
 import './index.css'
 
 function MovieContainer({ source, title, movieID}) {
-    const { ref, inView, entry } = useInView({
+    const { ref, inView/*, entry*/ } = useInView({
         threshold: 0.1,
     })
 
-    if (inView) {
-        console.log(entry.target.title)
-    }
+    // if (inView) {
+    //     console.log(entry.target.title)
+    // }
 
     return (
         <Link 
