@@ -22,7 +22,8 @@ function useAPI() {
     const [ loading, setLoading ] = useState(true)
     const [ searchValue, setSearchValue] = useState('')
     const [moreMovies, setMoreMovies] = useState([])
-
+    const [ maxPage, setMaxPage] = useState(0)
+    const [ categoriesMaxPages, setCategoriesMaxPages ] = useState({})
     const { search, movieID } = useParams()
  
     useEffect(() => {  
@@ -32,9 +33,15 @@ function useAPI() {
                     api('trending/movie/week'),
                     api('genre/movie/list'),
                 ])
+            
+            const updatedCategoriesMaxPages = {}
 
             async function getMoviesByCategory(categoryID) {
                 const { data } = await api('discover/movie?with_genres=' + categoryID)
+
+                updatedCategoriesMaxPages[categoryID] = data.total_pages
+                setCategoriesMaxPages(updatedCategoriesMaxPages)
+
                 return data.results;
             }
 
@@ -47,7 +54,8 @@ function useAPI() {
                     }
                 })
             )
-            
+
+            setMaxPage(trendingMoviesResponse.data.total_pages)
             setTrendMovies(trendingMoviesResponse.data.results)
             setCategories(categoriesWithMovies)
             setLoading(false)
@@ -61,6 +69,7 @@ function useAPI() {
             async function getSearchedMovie() {
                 const { data } = await api('search/movie?query=' + search)
                 
+                setMaxPage(data.total_pages)
                 setSearchResults(data.results)
                 setSearchValue(search)
                 setLoading(false)
@@ -98,28 +107,35 @@ function useAPI() {
 
         if (scrollIsBottom){
             if (route?.name === "trends") {
-                const { data } = await api('trending/movie/week', {
-                    params: {
-                        page,
-                    },
-                })
-
-                setMoreMovies([...moreMovies, ...data.results])
+                if(page <= maxPage){
+                    const { data } = await api('trending/movie/week', {
+                        params: {
+                            page,
+                        },
+                    })
+    
+                    setMoreMovies([...moreMovies, ...data.results])
+                }                
             } else if (route?.name === "search") {
-                const { data } = await api('search/movie?query=' + search, {
-                    params: {
-                        page,
-                    },
-                })
+                if(page <= maxPage){
+                    const { data } = await api('search/movie?query=' + search, {
+                        params: {
+                            page,
+                        },
+                    })
 
-                setMoreMovies([...moreMovies, ...data.results])
+                    setMoreMovies([...moreMovies, ...data.results])
+                }    
             } else if (route?.name === "category") {
-                const { data } = await api('discover/movie?with_genres=' + route.id, {
-                    params: {
-                        page,
-                    },
-                })
-                setMoreMovies([...moreMovies, ...data.results])
+                if(page <= categoriesMaxPages[route.id]){
+                    const { data } = await api('discover/movie?with_genres=' + route.id, {
+                        params: {
+                            page,
+                        },
+                    })
+
+                    setMoreMovies([...moreMovies, ...data.results])
+                }
             } 
         }       
     }
