@@ -1,5 +1,5 @@
 import React, {useEffect} from "react"
-import { useAPI } from "../App/API"
+import { useAPI } from "../../App/API"
 import { useNavigate, Link } from "react-router-dom"
 import './index.css'
 

@@ -1,9 +1,9 @@
 import React from "react"
 import './index.css'
-import { useAPI } from '../App/API'
-import { CategoryHeader } from "../CategoryHeader"
-import { BackButton } from '../BackButton'
-import { MovieList } from '../MovieList'
+import { useAPI } from '../../App/API'
+import { MovieListHeader } from "../../Components/MovieListHeader"
+import { BackButton } from '../../Components/BackButton'
+import { MovieList } from '../../Components/MovieList'
 
 function Trends() {
     const { trendMovies } = useAPI()
@@ -12,7 +12,7 @@ function Trends() {
         <section id="trends-section">
             <BackButton/>
 
-            <CategoryHeader categoryName='Trends'/>
+            <MovieListHeader title='Trends'/>
 
             <MovieList movies={trendMovies} route={{name: "trends"}}/>
         </section>

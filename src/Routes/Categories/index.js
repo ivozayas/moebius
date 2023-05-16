@@ -1,9 +1,9 @@
 import React from "react"
 import './index.css'
-import { BackButton } from '../BackButton'
-import { PreviewList } from "../PreviewList"
-import { useAPI } from '../App/API'
-import { PreviewHeader } from "../PreviewHeader"
+import { BackButton } from '../../Components/BackButton'
+import { PreviewList } from "../../Components/PreviewList"
+import { useAPI } from '../../App/API'
+import { PreviewHeader } from "../../Components/PreviewHeader"
 
 function Categories() {
     const { categories } = useAPI()

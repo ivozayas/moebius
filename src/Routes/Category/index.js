@@ -1,7 +1,7 @@
 import React from "react"
-import { CategoryHeader } from "../CategoryHeader"
-import { BackButton } from "../BackButton"
-import { MovieList } from "../MovieList"
+import { MovieListHeader } from "../../Components/MovieListHeader"
+import { BackButton } from "../../Components/BackButton"
+import { MovieList } from "../../Components/MovieList"
 import './index.css'
  
 function Category({ categoryName, categoryID, movies }) {
@@ -11,7 +11,7 @@ function Category({ categoryName, categoryID, movies }) {
                 
                 <BackButton/>
 
-                <CategoryHeader categoryName = {categoryName}/>
+                <MovieListHeader title = {categoryName}/>
 
                 <MovieList movies = { movies } route={{name: "category", id: categoryID}}/>
 

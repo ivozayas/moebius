@@ -1,14 +1,14 @@
 import React from "react"
 import './index.css'
-import { useAPI } from '../App/API'
-import { BackButton } from "../BackButton"
+import { useAPI } from '../../../App/API'
+import { BackButton } from "../../../Components/BackButton"
 import { RelatedPreview } from '../RelatedPreview'
-import { PreviewList } from '../PreviewList'
-import { CategoriesList } from "../CategoriesList"
+import { PreviewList } from '../../../Components/PreviewList'
+import { CategoriesList } from "../../ComponentsHome/CategoriesList"
 import { Modal } from "../ModalComponents/Modal"
 import { ModalPoster } from "../ModalComponents/ModalPoster"
 import { CloseModal } from "../ModalComponents/CloseModal"
-import { FakeMovieDetails } from '../LoadingSkeleton/FakeMovieDetails'
+import { FakeMovieDetails } from '../../../LoadingSkeleton/FakeMovieDetails'
 
 function MovieDetails(){
     const { selectedMovie, relatedMovies, setShowPoster, showPoster, loading } = useAPI()

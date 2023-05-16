@@ -1,7 +1,7 @@
 import React from "react"
-import { useAPI } from "../App/API"
-import { MovieList } from "../MovieList"
-import { BackButton } from "../BackButton"
+import { useAPI } from "../../../App/API"
+import { MovieList } from "../../../Components/MovieList"
+import { BackButton } from "../../../Components/BackButton"
 import { SearchHeader } from "../SearchHeader"
 import './index.css'
 

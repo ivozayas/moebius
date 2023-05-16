@@ -1,8 +1,8 @@
 import React from "react"
 import './index.css'
 import { MovieContainer } from "../MovieContainer"
-import { FakeMovieContainer } from "../LoadingSkeleton/FakeMovieContainer"
-import { useAPI } from "../App/API"
+import { FakeMovieContainer } from "../../LoadingSkeleton/FakeMovieContainer"
+import { useAPI } from "../../App/API"
 
 function MovieList({ movies, route }) {
     const {loading, getPaginatedMovies, moreMovies} = useAPI()

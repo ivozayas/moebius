@@ -1,8 +1,8 @@
 import React from 'react'
-import { useAPI } from '../App/API.js'
+import { useAPI } from '../../../App/API.js'
 import { TrendingPreview } from '../TrendingPreview'
-import { PreviewHeader } from '../PreviewHeader'
-import { PreviewList } from '../PreviewList'
+import { PreviewHeader } from '../../../Components/PreviewHeader'
+import { PreviewList } from '../../../Components/PreviewList'
 import { CategoriesPreview } from '../CategoriesPreview'
 import { CategoriesList } from '../CategoriesList'
 
