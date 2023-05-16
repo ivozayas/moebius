@@ -5,14 +5,15 @@ import { PreviewHeader } from '../../../Components/PreviewHeader'
 import { PreviewList } from '../../../Components/PreviewList'
 import { CategoriesPreview } from '../CategoriesPreview'
 import { CategoriesList } from '../CategoriesList'
+import { FavouriteMovies } from '../FavouriteMovies/index.js'
 
 function Home(){
     const { trendMovies, categories, loading } = useAPI()
 
     return (
         <React.Fragment>
-            <TrendingPreview>
 
+            <TrendingPreview>
                 <PreviewHeader
                     sectionTitle = 'trends'
                     sectionRout= '/trends'
@@ -21,11 +22,9 @@ function Home(){
                 <PreviewList
                     movies = {trendMovies}
                 />
-
             </TrendingPreview>
 
             <CategoriesPreview>
-
                 <PreviewHeader
                     sectionTitle = 'categories'
                     sectionRout = '/categories' 
@@ -35,8 +34,18 @@ function Home(){
                     categories = {categories}
                     loading = {loading}
                 />
-
             </CategoriesPreview>
+            
+            <FavouriteMovies>
+                <PreviewHeader
+                    sectionTitle = 'favorites'
+                    // sectionRout= '/trends'
+                />
+
+                <PreviewList
+                    movies = {trendMovies}
+                />
+            </FavouriteMovies>
             
         </React.Fragment>
     )
