@@ -9,11 +9,11 @@ function FavouriteMovies() {
     useEffect(() => {
         const handleFavMoviesChanged = () => {
           // Obtener el contenido actualizado de la clave fav_movies
-          const updatedFavMovies = localStorage.getItem('fav_movies') || "{}"
+          const updatedFavMovies = JSON.parse(localStorage.getItem('fav_movies')) || "{}"
 
           // console.log(["updatedFavMovies: ", Object.values(updatedFavMovies).map(item => item)]);
           
-          setFavMovies(Object.values(JSON.parse(updatedFavMovies)).map(item => item));
+          setFavMovies(Object.values(updatedFavMovies).map(item => item));
         };
     
         // Suscribirse al evento personalizado 'favMoviesChanged'
