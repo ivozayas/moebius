@@ -4,4 +4,5 @@
     grid-gap: 5px;
     width: calc(100% - 50px);
     padding-inline-start: 20px;
+    margin-top: 10px;
 }
