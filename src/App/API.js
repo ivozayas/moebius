@@ -25,7 +25,7 @@ function useAPI() {
     const [ maxPage, setMaxPage] = useState(0)
     const [ categoriesMaxPages, setCategoriesMaxPages ] = useState({})
     const { search, movieID } = useParams()
- 
+
     useEffect(() => {  
         async function fetchData() {
             const [trendingMoviesResponse, categoriesResponse] =

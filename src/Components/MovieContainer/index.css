@@ -43,7 +43,8 @@
     right: 6px;
     top: 6px;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out, color 0.2s ease-in-out;
+    transition: opacity 0.3s ease-in-out, color 0.2s ease-in-out, filter 0.2s ease-in-out;
+    filter: drop-shadow(0px 0px 1px rgb(0, 0, 0, 1));
 }
 
 .movie-container:hover #fav-btn {
@@ -51,11 +52,11 @@
 }
 
 .add-fav {
-    color: #c72ce6;
+    color: #b337cb;
 }
 
 .add-fav:hover{
-    color: #ffff57;
+    color: #d6d668;
 }
 
 .remove-fav {
@@ -63,5 +64,5 @@
 }
 
 .remove-fav:hover {
-    color: #c72ce6;
+    color: #d6d668;
 }

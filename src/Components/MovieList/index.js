@@ -27,9 +27,11 @@ function MovieList({ movies, route }) {
                         return (
                             <MovieContainer
                                 key = {movie.id}
-                                source = {movie.poster_path}
-                                title = {movie.title}
-                                movieID = {movie.id}
+                                movieData = {{
+                                    source: movie.poster_path,
+                                    title: movie.title,
+                                    movieID: movie.id
+                                }}
                             />
                         )
                     })   

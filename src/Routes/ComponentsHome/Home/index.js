@@ -8,11 +8,10 @@ import { CategoriesList } from '../CategoriesList'
 import { FavouriteMovies } from '../FavouriteMovies/index.js'
 
 function Home(){
-    const { trendMovies, categories, loading } = useAPI()
+    const { trendMovies, categories, loading } = useAPI()    
 
     return (
         <React.Fragment>
-
             <TrendingPreview>
                 <PreviewHeader
                     sectionTitle = 'trends'
@@ -36,17 +35,8 @@ function Home(){
                 />
             </CategoriesPreview>
             
-            <FavouriteMovies>
-                <PreviewHeader
-                    sectionTitle = 'favorites'
-                    // sectionRout= '/trends'
-                />
-
-                <PreviewList
-                    movies = {trendMovies}
-                />
-            </FavouriteMovies>
-            
+            <FavouriteMovies/> 
+                  
         </React.Fragment>
     )
 }
